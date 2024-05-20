@@ -1,0 +1,31 @@
+{
+  "name": "clean-crud-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "build": "tsup src --out-dir dist",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/index.ts",
+    "lint": "npx @biomejs/biome check --apply ./src",
+    "db:create": "tsx ./src/repositories/neon-postgres/create-tables.ts",
+    "db:delete": "tsx ./src/repositories/neon-postgres/delete-tables.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@types/node": "20.12.12",
+    "tsup": "8.0.2",
+    "tsx": "4.10.2",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "@fastify/cors": "9.0.1",
+    "dotenv": "16.4.5",
+    "fastify": "4.27.0",
+    "postgres": "3.4.4",
+    "zod": "3.23.8"
+  }
+}
